@@ -18,6 +18,13 @@ app.use(cors());
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "AI Mock Interview Backend Running"
+  });
+});
+
 app.use("/api", authRoutes);
 
 app.use("/api/interview", interviewRoutes);
