@@ -55,6 +55,10 @@ function Dashboard() {
                     <option>HTML</option>
                     <option>CSS</option>
                     <option>Node.js</option>
+                    <option>Express</option>
+                    <option>Git</option>
+                    <option>Frontend</option>
+                    <option>MERN Stack</option>
                 </select>
 
                 <label className="font-medium">
