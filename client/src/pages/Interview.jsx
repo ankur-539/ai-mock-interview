@@ -61,20 +61,20 @@ function Interview() {
 
     } else {
 
-  const interviewData =
-    JSON.parse(
-      localStorage.getItem(
-        "interviewData"
-      )
-    );
+      const interviewData =
+        JSON.parse(
+          localStorage.getItem(
+            "interviewData"
+          )
+        );
 
-  await api.put(
-    `/interview/complete/${interviewData.interviewId}`
-  );
+      await api.put(
+        `/interview/complete/${interviewData.interviewId}`
+      );
 
-  navigate("/result");
+      navigate("/result");
 
-}
+    }
   };
 
   if (questions.length === 0) {
@@ -96,7 +96,14 @@ function Interview() {
 
         </div>
 
+        {/* <QuestionCard
+          question={questions[currentQuestion]}
+          answer={answer}
+          setAnswer={setAnswer}
+        /> */}
+
         <QuestionCard
+          key={currentQuestion}
           question={questions[currentQuestion]}
           answer={answer}
           setAnswer={setAnswer}
