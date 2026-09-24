@@ -39,9 +39,21 @@ function Interview() {
 
       console.log("Answer Saved:", res.data);
 
+    // } catch (err) {
+    //   console.log("Submit Error:", err);
+    // }
     } catch (err) {
-      console.log("Submit Error:", err);
-    }
+  console.error("Submit status:", err.response?.status);
+  console.error("Backend response:", err.response?.data);
+  console.error("Full error:", err);
+
+  alert(
+    err.response?.data?.message ||
+    "Answer submit nahi hua. Backend logs check karo."
+  );
+
+  return false;
+}
   };
 
   const nextQuestion = async () => {
